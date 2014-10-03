@@ -1,0 +1,307 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sb-comment\n"
+"POT-Creation-Date: 2014-09-27 16:43+0700\n"
+"PO-Revision-Date: 2014-09-27 16:49+0700\n"
+"Last-Translator: SB Team <laidinhcuongvn@gmail.com>\n"
+"Language-Team: SB Team <laidinhcuongvn@gmail.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _;__;_e;gettext;_x;_n;gettext_noop\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: ../admin/class-sb-admin.php:98
+msgid "About SB"
+msgstr "Giới thiệu SB"
+
+#: ../admin/class-sb-admin.php:116 ../admin/sb-admin-functions.php:92
+msgid "Change your settings below:"
+msgstr ""
+
+#: ../admin/class-sb-admin.php:121
+msgid "About"
+msgstr ""
+
+#: ../admin/class-sb-field.php:28
+msgid "Insert image"
+msgstr ""
+
+#: ../admin/class-sb-field.php:33
+msgid "Upload"
+msgstr ""
+
+#: ../admin/class-sb-field.php:57
+msgid "Enter url for the image above."
+msgstr ""
+
+#: ../admin/class-sb-field.php:82
+msgid "On"
+msgstr ""
+
+#: ../admin/class-sb-field.php:83
+msgid "Off"
+msgstr ""
+
+#: ../admin/sb-about.php:11 ../admin/sb-setting-page.php:62
+msgid "Version:"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:130 ../sb-comment.php:69
+msgid "Comment"
+msgstr "Bình luận"
+
+#: ../admin/sb-core-functions.php:130
+msgid "<span class=\"count\">0</span> <span class=\"text\">"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:130
+msgid "<span class=\"count\">1</span> <span class=\"text\">"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:130
+msgid "Comments"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:130
+msgid "<span class=\"count\">%</span> <span class=\"text\">"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:199
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:202
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:205
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:205
+msgid "F Y"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:208
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:208
+msgid "Y"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:211
+msgid "Asides"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:214
+msgid "Galleries"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:217
+msgid "Images"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:220
+msgid "Videos"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:223
+msgid "Quotes"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:226
+msgid "Links"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:229
+msgid "Statuses"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:232
+msgid "Audios"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:235
+msgid "Chats"
+msgstr ""
+
+#: ../admin/sb-core-functions.php:238
+msgid "Archives"
+msgstr ""
+
+#: ../admin/sb-setting-page.php:40
+msgid "Options page will not work if your browser doesn't support javascript!"
+msgstr ""
+
+#: ../admin/sb-setting-page.php:44
+msgid "All your changes have been saved successfully."
+msgstr ""
+
+#: ../admin/sb-setting-page.php:53
+msgid "No name theme"
+msgstr ""
+
+#: ../admin/sb-setting-page.php:87 ../admin/sb-setting-page.php:88
+msgid "Save changes"
+msgstr ""
+
+#: ../admin/sb-setting-page.php:94
+#, php-format
+msgid "Created by %s."
+msgstr "Được tạo và phát triển bởi %s."
+
+#: ../admin/sb-setting-page.php:94
+#, php-format
+msgid "If you have any question, please send us an email via: %s"
+msgstr ""
+"Nếu bạn có bất kỳ thắc mắc nào, xin vui long gửi liên hệ qua địa chỉ email: "
+"%s"
+
+#: ../inc/sb-comment-template.php:12
+msgid "1 comment"
+msgstr "1 bình luận"
+
+#: ../inc/sb-comment-template.php:14
+msgid "Add your comment"
+msgstr "Thêm bình luận của bạn"
+
+#: ../inc/sb-comment-template.php:25
+msgid "Reply"
+msgstr "Trả lời"
+
+#: ../inc/sb-comment-template.php:36
+msgid "Comments are closed."
+msgstr "Bình luận đã được đóng."
+
+#: ../inc/sb-comment-template.php:64
+msgid "says:"
+msgstr "nói:"
+
+#: ../inc/sb-comment-template.php:70
+msgid "at"
+msgstr "lúc"
+
+#: ../inc/sb-comment-template.php:70
+msgid "Edit"
+msgstr "Sửa"
+
+#: ../inc/sb-comment-template.php:76
+msgid "Your comment is awaiting moderation."
+msgstr "Bình luận của bạn đang được chờ để xét duyệt."
+
+#: ../sb-comment.php:30
+msgid "Settings"
+msgstr "Cài đặt"
+
+#: ../sb-comment.php:43
+msgid "Comment navigation"
+msgstr "Phân trang bình luận"
+
+#: ../sb-comment.php:44
+msgid "&larr; Older comment"
+msgstr "&larr; Bình luận cũ hơn"
+
+#: ../sb-comment.php:45
+msgid "Newer comment &rarr;"
+msgstr "Bình luận mới hơn &rarr;"
+
+#: ../sb-comment.php:64
+msgid "Name"
+msgstr "Tên"
+
+#: ../sb-comment.php:64
+msgid "Your name"
+msgstr "Tên của bạn"
+
+#: ../sb-comment.php:65
+msgid "Email"
+msgstr "Email"
+
+#: ../sb-comment.php:65
+msgid "Your email"
+msgstr "Địa chỉ email của bạn"
+
+#: ../sb-comment.php:66
+msgid "Website"
+msgstr "Website"
+
+#: ../sb-comment.php:66
+msgid "Your website"
+msgstr "Địa chỉ trang web của bạn"
+
+#: ../sb-comment.php:70
+msgid "Your email address will not be published."
+msgstr "Địa chỉ email của bạn sẽ được giữ bí mật."
+
+#: ../sb-comment.php:70
+#, php-format
+msgid "Required fields are marked %s"
+msgstr "Những mục bắt buộc được đánh dấu %s"
+
+#: ../sb-comment.php:70
+msgid " "
+msgstr ""
+
+#: ../sb-comment.php:71
+#, php-format
+msgid "You may use these %1$s tags and attributes: %2$s"
+msgstr "Bạn có thể sử dung những thẻ %1$s và các thuộc tính sau: %2$s"
+
+#: ../sb-comment.php:71
+msgid "HyperText Markup Language"
+msgstr ""
+
+#: ../sb-comment.php:72
+#, php-format
+msgid "You must %s before leave a comment."
+msgstr "Bạn phải %s trước khi gửi bình luận."
+
+#: ../sb-comment.php:72
+msgid "login"
+msgstr "đăng nhập"
+
+#: ../sb-comment.php:73
+#, php-format
+msgid "You are logged in as %s"
+msgstr "Bạn đang đăng nhập với tên tài khoản %s"
+
+#: ../sb-comment.php:73
+msgid "Logout"
+msgstr "Đăng xuất"
+
+#: ../sb-comment.php:74
+msgid "Leave a reply"
+msgstr "Gửi bình luận"
+
+#: ../sb-comment.php:75
+msgid "Post comment"
+msgstr "Gửi bình luận"
+
+#: ../sb-comment.php:76
+#, php-format
+msgid "Reply to %s"
+msgstr "Trả lời bình luận của %s"
+
+#: ../sb-comment.php:77
+msgid "Cancel reply"
+msgstr "Hủy trả lời bình luận"
+
+#: ../sb-plugin-admin.php:14
+msgid "SB Comment options page"
+msgstr "Trang cài đặt tùy chọn cho SB Comment"
+
+#: ../sb-plugin-admin.php:15
+msgid "Spam check"
+msgstr "Kiểm tra spam"
