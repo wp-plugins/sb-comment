@@ -12,7 +12,19 @@ class SB_Spam {
         'дневной заработок',
         'lettersvsnumbers',
         'sivictxixxgn',
-        'ealwibidnwfc'
+        'ealwibidnwfc',
+        'air force mid',
+        'sanimpex',
+        'optime',
+        'nike free herren',
+        'egve',
+        'air max nike',
+        'snowsportsacademy',
+        'jak rozpoznac',
+        'loralaplante',
+        'coach outlet',
+        'rolka',
+        'zqcgcmmmjrut'
     );
 
     public static function check($content) {

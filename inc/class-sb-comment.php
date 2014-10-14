@@ -8,6 +8,27 @@ class SB_Comment {
         }
     }
 
+    public static function enable_spam_check() {
+        if(is_user_logged_in()) {
+            return false;
+        }
+        $options = get_option('sb_options');
+        $check_spam = isset($options['comment']['spam_check']) ? $options['comment']['spam_check'] : 1;
+        return (bool)$check_spam;
+    }
+
+    public static function enable_notify_comment_approved() {
+        $options = get_option('sb_options');
+        $result = isset($options['comment']['notify_user']) ? $options['comment']['notify_user'] : 1;
+        return (bool)$result;
+    }
+
+    public static function enable_auto_empty_spam() {
+        $options = get_option('sb_options');
+        $result = isset($options['comment']['auto_empty_spam']) ? $options['comment']['auto_empty_spam'] : 1;
+        return (bool)$result;
+    }
+
     public static function get_trashed($args = array()) {
         $args['status'] = 'trash';
         return self::get($args);
@@ -101,6 +122,23 @@ class SB_Comment {
             return false;
         }
         if(!self::is_content_valid($comment_data) || !self::is_author_url_valid($comment_data) || !self::is_author_email_valid($comment_data)) {
+            return true;
+        }
+        return false;
+    }
+
+    public static function set_spam_session($value) {
+        $_SESSION['sb_comment_spam'] = $value;
+    }
+
+    public static function get_spam_session() {
+        self::set_spam_session(0);
+        return isset($_SESSION['sb_comment_spam']) ? $_SESSION['sb_comment_spam'] : 0;
+    }
+
+    public static function is_spam_session() {
+        $spam = self::get_spam_session();
+        if((bool)$spam) {
             return true;
         }
         return false;

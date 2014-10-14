@@ -63,7 +63,7 @@ function sb_comment_navigation( $type ) {
 }
 
 function sb_comment_template() {
-    if (comments_open() || get_comments_number()) {
+    if(!SB_Comment::is_spam_session() && (comments_open() || get_comments_number())) {
         comments_template();
     }
 }
@@ -105,32 +105,33 @@ function sb_comments() {
     include SB_COMMENT_INC_PATH . '/sb-comment-template.php';
 }
 
-$options = get_option('sb_options');
-$check_spam = isset($options['comment']['spam_check']) ? $options['comment']['spam_check'] : 0;
-
 function sb_insert_comment($comment_id, $comment_object) {
-    if (empty($comment_object->comment_content)) {
+    if(SB_Comment::enable_spam_check() && empty($comment_object->comment_content)) {
         SB_Comment::delete($comment_id);
+        wp_die(__('Spam detected!', 'sb-comment'));
     }
 }
-add_action('wp_insert_comment', 'sb_insert_comment', 99, 2);
+add_action('wp_insert_comment', 'sb_insert_comment', 10, 2);
 
 function sb_transition_comment_status($new_status, $old_status, $comment) {
     if($new_status != $old_status) {
-        if('approved' == $new_status) {
+        if('approved' == $new_status && SB_Comment::enable_notify_comment_approved()) {
             SB_Mail::notify_user_for_comment_approved($comment);
+        } elseif('spam' == $new_status && SB_Comment::enable_auto_empty_spam()) {
+            SB_Comment::delete($comment->comment_ID);
         }
     }
 }
-add_action('transition_comment_status', 'sb_transition_comment_status');
+add_action('transition_comment_status', 'sb_transition_comment_status', 10, 3);
 
 function sb_comment_spam($commentdata) {
     return SB_Comment::is_spam($commentdata);
 }
 
 function sb_preprocess_comment($commentdata) {
-    if(sb_comment_spam($commentdata)) {
+    if(SB_Comment::enable_spam_check() && sb_comment_spam($commentdata)) {
         $commentdata['comment_content'] = '';
+        SB_Comment::set_spam_session(1);
         return $commentdata;
     }
     $comment_author_url = isset($commentdata['comment_author_url']) ? $commentdata['comment_author_url'] : '';
@@ -144,7 +145,7 @@ function sb_preprocess_comment($commentdata) {
     }
     return $commentdata;
 }
-add_filter('preprocess_comment', 'sb_preprocess_comment');
+add_filter('preprocess_comment', 'sb_preprocess_comment', 1);
 
 function sb_comment_ajax_callback() {
     $comment_body = isset($_POST['comment_body']) ? $_POST['comment_body'] : '';
@@ -164,5 +165,31 @@ function sb_comment_ajax_callback() {
 }
 add_action('wp_ajax_sb_comment', 'sb_comment_ajax_callback');
 add_action('wp_ajax_nopriv_sb_comment', 'sb_comment_ajax_callback');
+
+function sb_comment_nonce_field() {
+    wp_nonce_field('sb_comment_form');
+}
+add_action('comment_form', 'sb_comment_nonce_field');
+
+function sb_comment_stop() {
+    if(!wp_verify_nonce($_REQUEST['_wpnonce'], 'sb_comment_form')) {
+        wp_die(__('Your comment is not valid!', 'sb-core'));
+    }
+}
+add_action('pre_comment_on_post', 'sb_comment_stop');
+
+function sb_comment_empty_spam_cron_function(){
+    if(SB_Comment::enable_auto_empty_spam()) {
+        SB_Comment::delete_spam();
+    }
+}
+
+function sb_comment_empty_spam_schedule(){
+    if(!wp_next_scheduled('sb_comment_empty_spam_cron_job')) {
+        wp_schedule_event(time(), 'hourly', 'sb_comment_empty_spam_cron_job');
+    }
+}
+add_action('init', 'sb_comment_empty_spam_schedule');
+add_action('sb_comment_empty_spam_cron_job', 'sb_comment_empty_spam_cron_function');
 
 require SB_COMMENT_INC_PATH . '/sb-plugin-load.php';
