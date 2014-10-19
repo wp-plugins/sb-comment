@@ -1,11 +1,7 @@
 <?php
-defined('ABSPATH') OR exit;
-
 function sb_comment_check_core() {
     $activated_plugins = get_option('active_plugins');
-
     $sb_core_installed = in_array('sb-core/sb-core.php', $activated_plugins);
-
     if(!$sb_core_installed) {
         $sb_plugins = array(SB_COMMENT_BASENAME);
         $activated_plugins = get_option('active_plugins');
@@ -15,15 +11,17 @@ function sb_comment_check_core() {
     return $sb_core_installed;
 }
 
-sb_comment_check_core();
-
 function sb_comment_activation() {
     if(!sb_comment_check_core()) {
-        wp_die(sprintf(__('You must install plugin %1$s first! Click here to %2$s.', 'sb-comment'), '<a href="https://wordpress.org/plugins/sb-core/">SB Core</a>', sprintf('<a href="%1$s">%2$s</a>', admin_url('plugins.php'), __('go back', 'sb-comment'))));
+        wp_die(sprintf(__('You must install and activate plugin %1$s first! Click here to %2$s.', 'sb-comment'), '<a href="https://wordpress.org/plugins/sb-core/">SB Core</a>', sprintf('<a href="%1$s">%2$s</a>', admin_url('plugins.php'), __('go back', 'sb-comment'))));
     }
     do_action('sb_comment_activation');
 }
-register_activation_hook( SB_COMMENT_FILE, 'sb_comment_activation' );
+register_activation_hook(SB_COMMENT_FILE, 'sb_comment_activation');
+
+if(!sb_comment_check_core()) {
+    return;
+}
 
 function sb_comment_settings_link($links) {
     if(sb_comment_check_core()) {

@@ -1,6 +1,4 @@
 <?php
-defined('ABSPATH') OR exit;
-
 class SB_Comment {
     public static function allow_author_post_shortcode_on_comment() {
         if(current_user_can('edit_posts')) {
@@ -12,19 +10,19 @@ class SB_Comment {
         if(is_user_logged_in()) {
             return false;
         }
-        $options = get_option('sb_options');
+        $options = SB_Option::get();
         $check_spam = isset($options['comment']['spam_check']) ? $options['comment']['spam_check'] : 1;
         return (bool)$check_spam;
     }
 
     public static function enable_notify_comment_approved() {
-        $options = get_option('sb_options');
+        $options = SB_Option::get();
         $result = isset($options['comment']['notify_user']) ? $options['comment']['notify_user'] : 1;
         return (bool)$result;
     }
 
     public static function enable_auto_empty_spam() {
-        $options = get_option('sb_options');
+        $options = SB_Option::get();
         $result = isset($options['comment']['auto_empty_spam']) ? $options['comment']['auto_empty_spam'] : 1;
         return (bool)$result;
     }

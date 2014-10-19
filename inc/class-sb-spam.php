@@ -1,6 +1,4 @@
 <?php
-defined('ABSPATH') OR exit;
-
 class SB_Spam {
     public static $texts = array(
         'Canvas Art Cheap',

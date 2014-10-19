@@ -1,6 +1,4 @@
 <?php
-defined('ABSPATH') OR exit;
-
 require SB_COMMENT_INC_PATH . '/class-sb-comment.php';
 
 require SB_COMMENT_INC_PATH . '/class-sb-spam.php';
