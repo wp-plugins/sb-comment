@@ -78,20 +78,20 @@ function sb_comment_form_args() {
     $aria_req = ( $req ? " aria-required='true'" : '' );
     $args = array(
         'fields'				=> apply_filters( 'comment_form_default_fields', array(
-                'author' => '<p class="comment-form-author">' . '<label for="author">' . __( 'Name', 'sb-comment' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="author" placeholder="'.__('Your name', 'sb-comment').' *" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' class="sb-author-info"></p>',
-                'email' => '<p class="comment-form-email">' . '<label for="email">' . __( 'Email', 'sb-comment' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="email" placeholder="'.__('Your email', 'sb-comment').' *" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' class="sb-author-info"></p>',
-                'url' => '<p class="comment-form-url">' . '<label for="url">' . __( 'Website', 'sb-comment' ) . '</label>' . '<input id="url" name="url" placeholder="'.__('Your website', 'sb-comment').'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" class="sb-author-info"></p>'
+                'author' => '<p class="comment-form-author name">' . '<label for="author">' . __( 'Tên', 'sb-comment' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="author" placeholder="'.__('Họ và tên', 'sb-comment').' *" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . ' class="sb-author-info"></p>',
+                'email' => '<p class="comment-form-email email">' . '<label for="email">' . __( 'Địa chỉ email', 'sb-comment' ) . '</label> ' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="email" placeholder="'.__('Địa chỉ email', 'sb-comment').' *" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '"' . $aria_req . ' class="sb-author-info"></p>',
+                'url' => '<p class="comment-form-url website">' . '<label for="url">' . __( 'Website', 'sb-comment' ) . '</label>' . '<input id="url" name="url" placeholder="'.__('Your website', 'sb-comment').'" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" class="sb-author-info"></p>'
             )
         ),
-        'comment_field'			=> '<p class="comment-form-comment">' . '<label for="comment">' . __( 'Comment', 'sb-comment' ) . '</label>' . '<textarea id="comment" name="comment" placeholder="" aria-required="true" class="sb-comment-msg"></textarea></p>',
-        'comment_notes_before'	=> '<p class="comment-notes before">' . __( 'Your email address will not be published.', 'sb-comment' ) . __( $req ? ' '.sprintf(__('Required fields are marked %s', 'sb-comment'), '(*)') : '' ) . '</p>',
-        'comment_notes_after'	=> '<p class="form-allowed-tags comment-notes after">' . sprintf( __( sprintf(__('You may use these %1$s tags and attributes: %2$s', 'sb-comment'), '<abbr title="'.__('HyperText Markup Language', 'sb-comment').'">HTML</abbr>', ' <code>' . allowed_tags() . '</code>' ), 'sb-comment')) . '</p>',
-        'must_log_in'			=> '<p class="must-log-in">' . sprintf(__( 'You must %s before leave a comment.', 'sb-comment' ), sprintf('<a href="%1$s">%2$s</a>', wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ), __('login', 'sb-comment')) ) . '</p>',
-        'logged_in_as'			=> '<p class="logged-in-as">' . sprintf(__('You are logged in as %s', 'sb-comment'), sprintf(' <a href="%1$s">%2$s</a>. <a href="%3$s" title="%4$s">%5$s?</a>', admin_url( 'profile.php' ), esc_attr( $user_identity ), wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ), __('Logout', 'sb-comment'), __('Logout', 'sb-comment'))). '</p>',
-        'title_reply'			=> '<a id="leaveyourcomment"></a><span class="comment-title">'.__('Leave a reply', 'sb-comment').'</span>',
-        'label_submit'			=> __('Post comment', 'sb-comment'),
-        'title_reply_to'		=>  __( 'Reply to %s', 'sb-comment' ),
-        'cancel_reply_link'		=> __('Cancel reply', 'sb-comment')
+        'comment_field'			=> '<p class="comment-form-comment">' . '<label for="comment">' . __( 'Nội dung', 'sb-comment' ) . '</label>' . '<textarea id="comment" name="comment" placeholder="" aria-required="true" class="sb-comment-msg"></textarea></p>',
+        'comment_notes_before'	=> '<p class="comment-notes before">' . __( 'Địa chỉ email của bạn sẽ được giữ bí mật.', 'sb-comment' ) . __( $req ? ' '.sprintf(__('Những mục được đánh dấu %s là bắt buộc.', 'sb-comment'), '(*)') : '' ) . '</p>',
+        'comment_notes_after'	=> '<p class="form-allowed-tags comment-notes after">' . sprintf( __( sprintf(__('Bạn có thể sử dụng những thẻ %1$s được liệt kê như sau: %2$s', 'sb-comment'), '<abbr title="'.__('Ngôn ngữ đánh dấu siêu văn bản bằng thẻ', 'sb-comment').'">HTML</abbr>', ' <code>' . allowed_tags() . '</code>' ), 'sb-comment')) . '</p>',
+        'must_log_in'			=> '<p class="must-log-in">' . sprintf(__( 'Bạn phải %s trước khi tiến hành gửi bình luận.', 'sb-comment' ), sprintf('<a href="%1$s">%2$s</a>', wp_login_url( apply_filters( 'the_permalink', get_permalink() ) ), __('login', 'sb-comment')) ) . '</p>',
+        'logged_in_as'			=> '<p class="logged-in-as">' . sprintf(__('Bạn đang đăng nhập với tên tài khoản %s', 'sb-comment'), sprintf(' <a href="%1$s">%2$s</a>. <a href="%3$s" title="%4$s">%5$s?</a>', admin_url( 'profile.php' ), esc_attr( $user_identity ), wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ), __('Logout', 'sb-comment'), __('Thoát', 'sb-comment'))). '</p>',
+        'title_reply'			=> '<a id="leaveyourcomment"></a><span class="comment-title">'.__('Gửi bình luận', 'sb-comment').'</span>',
+        'label_submit'			=> __('Gửi bình luận', 'sb-comment'),
+        'title_reply_to'		=>  __( 'Trả lời %s', 'sb-comment' ),
+        'cancel_reply_link'		=> __('Hủy trả lời', 'sb-comment')
     );
     return $args;
 }

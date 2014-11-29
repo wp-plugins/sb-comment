@@ -171,4 +171,41 @@ class SB_Comment {
             }
         }
     }
+
+    public static function get_id($comment) {
+        $result = 0;
+        if(!SB_Core::is_error($comment)) {
+            $result = $comment->comment_ID;
+        }
+        return $result;
+    }
+
+    public static function get_meta($comment_id, $key) {
+        return get_comment_meta($comment_id, $key, true);
+    }
+
+    public static function update_meta($comment_id, $key, $value) {
+        update_comment_meta($comment_id, $key, $value);
+    }
+
+    public static function get_likes($comment_id) {
+        $likes = self::get_meta($comment_id, 'likes');
+        $likes = intval($likes);
+        return $likes;
+    }
+
+    public static function update_likes($comment_id) {
+        $likes = self::get_likes($comment_id);
+        $likes++;
+        self::update_meta($comment_id, 'likes', $likes);
+    }
+
+    public static function get_human_time_diff($comment_id) {
+        $comment_date = get_comment_date('G', $comment_id);
+        return SB_Core::date_time_ago($comment_date);
+    }
+
+    public static function the_human_time_diff($comment_id) {
+        echo self::get_human_time_diff($comment_id);
+    }
 }

@@ -4,7 +4,7 @@ Donate link: http://hocwp.net/donate/
 Tags: sb, sb team, sb plugin, comment, wordpress comment, sb comment
 Requires at least: 3.9
 Tested up to: 4.0.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,8 +32,8 @@ SB Comment is a plugin that allows to check spam comment on your WordPress site,
 
 * [SB Banner Widget](https://wordpress.org/plugins/sb-banner-widget/)
 * [SB Clean](https://wordpress.org/plugins/sb-clean/)
-* [SB Paginate](https://wordpress.org/plugins/sb-paginate/)
 * [SB Login Page](https://wordpress.org/plugins/sb-login-page/)
+* [SB Paginate](https://wordpress.org/plugins/sb-paginate/)
 * [SB Post Widget](https://wordpress.org/plugins/sb-post-widget/)
 * [SB Tab Widget](https://wordpress.org/plugins/sb-tab-widget/)
 * [SB TBFA](https://wordpress.org/plugins/sb-tbfa/)
@@ -68,6 +68,10 @@ Please visit [homepage](http://hocwp.net) for more details.
 Please update SB Core before you upgrade SB Comment to new version.
 
 == Changelog ==
+
+= 1.0.5 =
+* Update style for default comment template.
+* Add function for user can like and report a comment.
 
 = 1.0.4 =
 Update check core functions.
