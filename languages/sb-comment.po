@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: sb-comment\n"
-"POT-Creation-Date: 2014-09-27 15:53+0700\n"
-"PO-Revision-Date: 2014-09-27 15:54+0700\n"
-"Last-Translator: SB Team <laidinhcuongvn@gmail.com>\n"
+"POT-Creation-Date: 2014-12-04 17:03+0700\n"
+"PO-Revision-Date: 2014-12-04 17:03+0700\n"
+"Last-Translator: Cuong Dinh Lai <laidinhcuongvn@gmail.com>\n"
 "Language-Team: SB Team <laidinhcuongvn@gmail.com>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.7\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -17,266 +17,185 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
-#: ../admin/class-sb-admin.php:98
-msgid "About SB"
+#: ../inc/sb-comment-template.php:23
+msgid "nói:"
 msgstr ""
 
-#: ../admin/class-sb-admin.php:116 ../admin/sb-admin-functions.php:92
-msgid "Change your settings below:"
+#: ../inc/sb-comment-template.php:24
+msgid "Sửa"
 msgstr ""
 
-#: ../admin/class-sb-admin.php:121
-msgid "About"
+#: ../inc/sb-comment-template.php:37
+msgid "Bình luận của bạn đang được chờ để xét duyệt."
 msgstr ""
 
-#: ../admin/class-sb-field.php:28
-msgid "Insert image"
+#: ../inc/sb-comment-template.php:49
+msgid "Thích"
 msgstr ""
 
-#: ../admin/class-sb-field.php:33
-msgid "Upload"
+#: ../inc/sb-comment-template.php:50
+msgid "Báo cáo vi phạm"
 msgstr ""
 
-#: ../admin/class-sb-field.php:57
-msgid "Enter url for the image above."
-msgstr ""
-
-#: ../admin/class-sb-field.php:82
-msgid "On"
-msgstr ""
-
-#: ../admin/class-sb-field.php:83
-msgid "Off"
-msgstr ""
-
-#: ../admin/sb-about.php:11 ../admin/sb-setting-page.php:62
-msgid "Version:"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:130
-msgid "Comment"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:130
-msgid "<span class=\"count\">0</span> <span class=\"text\">"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:130
-msgid "<span class=\"count\">1</span> <span class=\"text\">"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:130
-msgid "Comments"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:130
-msgid "<span class=\"count\">%</span> <span class=\"text\">"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:199
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:202
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:205
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:205
-msgid "F Y"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:208
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:208
-msgid "Y"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:211
-msgid "Asides"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:214
-msgid "Galleries"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:217
-msgid "Images"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:220
-msgid "Videos"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:223
-msgid "Quotes"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:226
-msgid "Links"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:229
-msgid "Statuses"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:232
-msgid "Audios"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:235
-msgid "Chats"
-msgstr ""
-
-#: ../admin/sb-core-functions.php:238
-msgid "Archives"
-msgstr ""
-
-#: ../admin/sb-setting-page.php:40
-msgid "Options page will not work if your browser doesn't support javascript!"
-msgstr ""
-
-#: ../admin/sb-setting-page.php:44
-msgid "All your changes have been saved successfully."
-msgstr ""
-
-#: ../admin/sb-setting-page.php:53
-msgid "No name theme"
-msgstr ""
-
-#: ../admin/sb-setting-page.php:87 ../admin/sb-setting-page.php:88
-msgid "Save changes"
-msgstr ""
-
-#: ../admin/sb-setting-page.php:94
-#, php-format
-msgid "Created by %s."
-msgstr ""
-
-#: ../admin/sb-setting-page.php:94
-msgid "If you have any question, please send us an email via"
-msgstr ""
-
-#: ../inc/sb-comment-template.php:12
-msgid "1 comment"
-msgstr ""
-
-#: ../inc/sb-comment-template.php:14
-msgid "Add your comment"
-msgstr ""
-
-#: ../inc/sb-comment-template.php:25
-msgid "Reply"
-msgstr ""
-
-#: ../inc/sb-comment-template.php:36
-msgid "Comments are closed."
-msgstr ""
-
-#: ../inc/sb-comment-template.php:64
-#, php-format
-msgid ""
-"<cite class=\"fn inline-block\"><strong>%s</strong></cite> <span class=\"says"
-"\">says:</span>"
-msgstr ""
-
-#: ../inc/sb-comment-template.php:70
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: ../inc/sb-comment-template.php:70
-msgid "(Edit)"
+#: ../inc/sb-comment-template.php:53
+msgid "Chia sẻ"
 msgstr ""
 
 #: ../inc/sb-comment-template.php:76
-msgid "Your comment is awaiting moderation."
+msgid "1 bình luận"
 msgstr ""
 
-#: ../sb-comment.php:30
-msgid "Settings"
+#: ../inc/sb-comment-template.php:79
+msgid "Thêm bình luận"
 msgstr ""
 
-#: ../sb-comment.php:43
-msgid "Comment navigation"
+#: ../inc/sb-comment-template.php:88
+msgid "Trả lời"
 msgstr ""
 
-#: ../sb-comment.php:44
-msgid "&larr; Older comment"
+#: ../inc/sb-comment-template.php:98
+msgid "Bình luận đã được đóng."
 msgstr ""
 
-#: ../sb-comment.php:45
-msgid "Newer comment &rarr;"
+#: ../inc/sb-plugin-admin.php:14
+msgid "SB Comment options page"
 msgstr ""
 
-#: ../sb-comment.php:64
-msgid "Your name"
+#: ../inc/sb-plugin-admin.php:15
+msgid "Spam check"
 msgstr ""
 
-#: ../sb-comment.php:65
-msgid "Your email"
+#: ../inc/sb-plugin-admin.php:16
+msgid "Notify user"
 msgstr ""
 
-#: ../sb-comment.php:66
-msgid "Your website"
+#: ../inc/sb-plugin-admin.php:17
+msgid "Auto empty spam"
 msgstr ""
 
-#: ../sb-comment.php:69
-msgid "Comment body"
+#: ../inc/sb-plugin-admin.php:26
+msgid ""
+"You can turn on or turn off the functions to allow empty spam automatically."
 msgstr ""
 
-#: ../sb-comment.php:70
-msgid "Your email address will not be published."
+#: ../inc/sb-plugin-admin.php:41
+msgid ""
+"You can turn on or turn off the functions to allow sending email "
+"notifications when comment is approved."
 msgstr ""
 
-#: ../sb-comment.php:70
+#: ../inc/sb-plugin-admin.php:56
+msgid "You can turn on or turn off the functions for checking spam comment."
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:19
+msgid "Lỗi"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:19
+#, php-format
+msgid ""
+"The plugin with name %1$s has been deactivated because of missing %2$s "
+"plugin."
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:33
+msgid "Cài đặt"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:59
+msgid "Phân trang bình luận"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:60
+msgid "&larr; Bình luận cũ hơn"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:61
+msgid "Bình luận mới hơn &rarr;"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:79
+msgid "Tên"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:79
+msgid "Họ và tên"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:80
+msgid "Địa chỉ email"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:81
+msgid "Trang web"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:81
+msgid "Địa chỉ trang web"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:84
+msgid "Nội dung"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:85
+msgid "Địa chỉ email của bạn sẽ được giữ bí mật."
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:85
+#, php-format
+msgid "Những mục được đánh dấu %s là bắt buộc."
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:85
 msgid " "
 msgstr ""
 
-#: ../sb-comment.php:72
+#: ../inc/sb-plugin-functions.php:86
 #, php-format
-msgid "You must <a href=\"%s\">login</a> before leave a comment."
+msgid "Bạn có thể sử dụng những thẻ %1$s được liệt kê như sau: %2$s"
 msgstr ""
 
-#: ../sb-comment.php:73
-msgid "You are logged in as"
+#: ../inc/sb-plugin-functions.php:86
+msgid "Ngôn ngữ đánh dấu siêu văn bản bằng thẻ"
 msgstr ""
 
-#: ../sb-comment.php:73
-msgid "Logout"
-msgstr ""
-
-#: ../sb-comment.php:73
+#: ../inc/sb-plugin-functions.php:87
 #, php-format
-msgid " <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\""
+msgid "Bạn phải %s trước khi tiến hành gửi bình luận."
 msgstr ""
 
-#: ../sb-comment.php:74
-msgid "Leave a reply"
+#: ../inc/sb-plugin-functions.php:87
+msgid "đăng nhập"
 msgstr ""
 
-#: ../sb-comment.php:75
-msgid "Post comment"
-msgstr ""
-
-#: ../sb-comment.php:76
+#: ../inc/sb-plugin-functions.php:88
 #, php-format
-msgid "Reply to %s"
+msgid "Bạn đang đăng nhập với tên tài khoản %s"
 msgstr ""
 
-#: ../sb-comment.php:77
-msgid "Cancel reply"
+#: ../inc/sb-plugin-functions.php:88
+msgid "Thoát"
 msgstr ""
 
-#: ../sb-plugin-admin.php:14
-msgid "SB Comment options page"
+#: ../inc/sb-plugin-functions.php:89 ../inc/sb-plugin-functions.php:90
+msgid "Gửi bình luận"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:91
+#, php-format
+msgid "Trả lời %s"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:92
+msgid "Hủy trả lời"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:112
+msgid "Bình luận spam đã được phát hiện!"
+msgstr ""
+
+#: ../inc/sb-plugin-functions.php:158
+msgid "Bình luận của bạn không hợp lệ!"
 msgstr ""

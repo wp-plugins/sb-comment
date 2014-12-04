@@ -12,7 +12,7 @@
                     'comment_email': commentEmail.val()
                 };
 
-            if((commentBody.length && '' == commentBody.val()) || (commentName.length && '' == commentName.val()) || (commentEmail.length && '' == commentEmail.val()) || (mathCaptcha.length && ('' == mathCaptcha.val() || false == $.isNumeric(mathCaptcha.val())))) {
+            if((commentBody.length && !commentBody.val().trim()) || (commentName.length && !commentName.val().trim()) || (commentEmail.length && !commentEmail.val().trim()) || (mathCaptcha.length && (!mathCaptcha.val().trim() || false == $.isNumeric(mathCaptcha.val())))) {
                 if(event.preventDefault) {
                     event.preventDefault();
                 } else {

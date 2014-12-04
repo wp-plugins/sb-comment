@@ -23,7 +23,7 @@ function sb_comment_auto_empty_spam_callback() {
     $value = isset($options['comment']['auto_empty_spam']) ? $options['comment']['auto_empty_spam'] : 1;
     $id = 'sb_comment_auto_empty_spam';
     $name = 'sb_options[comment][auto_empty_spam]';
-    $description = __('User can turn on or turn off the functions to allow empty spam automatically.', 'sb-comment');
+    $description = __('You can turn on or turn off the functions to allow empty spam automatically.', 'sb-comment');
     $args = array(
         'id' => $id,
         'name' => $name,
@@ -38,7 +38,7 @@ function sb_comment_notify_user_callback() {
     $value = isset($options['comment']['notify_user']) ? $options['comment']['notify_user'] : 1;
     $id = '';
     $name = 'sb_options[comment][notify_user]';
-    $description = __('User can turn on or turn off the functions to allow sending email notifications when comment is approved.', 'sb-comment');
+    $description = __('You can turn on or turn off the functions to allow sending email notifications when comment is approved.', 'sb-comment');
     $args = array(
         'id' => $id,
         'name' => $name,
@@ -53,7 +53,7 @@ function sb_comment_spam_check_callback() {
     $value = isset($options['comment']['spam_check']) ? $options['comment']['spam_check'] : 1;
     $id = 'sb_comment_spam_check';
     $name = 'sb_options[comment][spam_check]';
-    $description = __('User can turn on or turn off the functions for checking spam comment.', 'sb-comment');
+    $description = __('You can turn on or turn off the functions for checking spam comment.', 'sb-comment');
     $args = array(
         'id' => $id,
         'name' => $name,

@@ -63,12 +63,12 @@ class SB_Comment {
     }
 
     public static function get($args = array()) {
-        $args["number"] = '';
+        $args['number'] = '';
         return get_comments($args);
     }
 
     public static function get_approved($args = array()) {
-        $args["status"] = 'approve';
+        $args['status'] = 'approve';
         return self::get($args);
     }
 
@@ -87,13 +87,15 @@ class SB_Comment {
 
     public static function is_author_url_valid($comment_data) {
         $comment_author_url = SB_PHP::get_value_by_key($comment_data, 'comment_author_url');
-        $author_url_length = SB_PHP::strlen($comment_author_url);
-        if($author_url_length > self::get_spam_url_len() || self::is_spam($comment_author_url)) {
-            return false;
-        }
-        $author_domain_name = SB_PHP::get_domain_name($comment_author_url);
-        if(!empty($author_domain_name) && !SB_PHP::is_domain_alive($author_domain_name)) {
-            return false;
+        if(!empty($comment_author_url)) {
+            $author_url_length = SB_PHP::strlen($comment_author_url);
+            if($author_url_length > self::get_spam_url_len() || self::is_spam($comment_author_url)) {
+                return false;
+            }
+            $author_domain_name = SB_PHP::get_domain_name($comment_author_url);
+            if(!empty($author_domain_name) && !SB_PHP::is_domain_alive($author_domain_name)) {
+                return false;
+            }
         }
         return true;
     }
@@ -145,10 +147,10 @@ class SB_Comment {
     public static function is_content_valid($comment_data) {
         $spam_link_number = self::get_spam_link_count();
         $content = SB_PHP::get_value_by_key($comment_data, 'comment_content');
-        if(SB_PHP::count_html_tag($content, 'a') > $spam_link_number || SB_Spam::check($content)) {
+        if(!empty($content) && (SB_PHP::count_html_tag($content, 'a') > $spam_link_number || SB_Spam::check($content))) {
             return false;
         }
-        $count_url = mb_substr_count($content, "[url");
+        $count_url = mb_substr_count($content, '[url');
         if($count_url > $spam_link_number) {
             return false;
         }
