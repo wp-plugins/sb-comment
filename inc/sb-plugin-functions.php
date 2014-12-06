@@ -66,6 +66,8 @@ function sb_comment_navigation($type) {
 function sb_comment_template() {
     if(!SB_Comment::is_spam_session() && (comments_open() || get_comments_number())) {
         comments_template();
+    } else {
+        echo '<div class="no-comment"></div>';
     }
 }
 

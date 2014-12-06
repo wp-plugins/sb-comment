@@ -37,11 +37,10 @@
 }
 
 .sb-comment-area .fn a {
-    color: #000;
-    display: block;
-    font-size: 14px;
-    font-style: normal;
-    line-height: 17px;
+    color: #757575;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .sb-comment-area .comment-meta a {
