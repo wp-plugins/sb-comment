@@ -57,7 +57,7 @@
     color: #333;
     font-family: arial;
     font-size: 13px;
-    line-height: 17px;
+    line-height: 18px;
     margin-bottom: 15px;
     margin-top: 5px;
 }
@@ -86,7 +86,16 @@
     position: relative;
     text-indent: -9999px;
 }
-
+.sb-comment-area .comment-awaiting-moderation {
+    background-color: #f6f6f6;
+    border: 1px solid #ececec;
+    border-radius: 2px;
+    color: #999;
+    font-size: 11px;
+    font-style: normal;
+    margin-left: 55px;
+    padding: 5px 10px;
+}
 .comment-respond #cancel-comment-reply-link:before {
     content: "x";
     display: block;

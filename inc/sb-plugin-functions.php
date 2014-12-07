@@ -93,6 +93,9 @@ function sb_comment_form_args() {
         'title_reply_to'		=>  __( 'Trả lời %s', 'sb-comment' ),
         'cancel_reply_link'		=> __('Hủy trả lời', 'sb-comment')
     );
+    if(SB_Comment::disable_website_url()) {
+        unset($args['fields']['url']);
+    }
     return $args;
 }
 
@@ -138,7 +141,7 @@ function sb_preprocess_comment($commentdata) {
         return $commentdata;
     }
     $comment_author_url = isset($commentdata['comment_author_url']) ? $commentdata['comment_author_url'] : '';
-    if(!empty($comment_author_url) && !SB_PHP::is_url($comment_author_url) ) {
+    if(!empty($comment_author_url) && (!SB_PHP::is_url($comment_author_url) || SB_Comment::disable_website_url())) {
         unset( $commentdata['comment_author_url'] );
     } else {
         $commentdata['comment_author_url'] = SB_PHP::get_domain_name_with_http($comment_author_url);

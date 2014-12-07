@@ -15,8 +15,40 @@ function sb_comment_setting_field() {
     SB_Admin_Custom::add_setting_field('sb_comment_spam_check', __('Spam check', 'sb-comment'), 'sb_comment_section', 'sb_comment_spam_check_callback', 'sb_comment');
     SB_Admin_Custom::add_setting_field('sb_comment_notify_user', __('Notify user', 'sb-comment'), 'sb_comment_section', 'sb_comment_notify_user_callback', 'sb_comment');
     SB_Admin_Custom::add_setting_field('sb_comment_auto_empty_spam', __('Auto empty spam', 'sb-comment'), 'sb_comment_section', 'sb_comment_auto_empty_spam_callback', 'sb_comment');
+    SB_Admin_Custom::add_setting_field('sb_comment_remove_url', __('Disable website url', 'sb-comment'), 'sb_comment_section', 'sb_comment_remove_url_callback', 'sb_comment');
+    SB_Admin_Custom::add_setting_field('sb_comment_tools', __('Comment tools', 'sb-comment'), 'sb_comment_section', 'sb_comment_tools_callback', 'sb_comment');
 }
 add_action('sb_admin_init', 'sb_comment_setting_field');
+
+function sb_comment_remove_url_callback() {
+    $options = SB_Option::get();
+    $value = isset($options['comment']['website_url']) ? $options['comment']['website_url'] : 0;
+    $id = 'sb_comment_remove_url';
+    $name = 'sb_options[comment][website_url]';
+    $description = __('You can turn on or turn off the functions to allow user add website url into comment.', 'sb-comment');
+    $args = array(
+        'id' => $id,
+        'name' => $name,
+        'value' => $value,
+        'description' => $description
+    );
+    SB_Field::switch_button($args);
+}
+
+function sb_comment_tools_callback() {
+    $options = SB_Option::get();
+    $value = isset($options['comment']['tools']) ? $options['comment']['tools'] : 1;
+    $id = 'sb_comment_tools';
+    $name = 'sb_options[comment][tools]';
+    $description = __('You can turn on or turn off the functions to show comment tools.', 'sb-comment');
+    $args = array(
+        'id' => $id,
+        'name' => $name,
+        'value' => $value,
+        'description' => $description
+    );
+    SB_Field::switch_button($args);
+}
 
 function sb_comment_auto_empty_spam_callback() {
     $options = SB_Option::get();

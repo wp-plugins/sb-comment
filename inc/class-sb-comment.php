@@ -21,6 +21,18 @@ class SB_Comment {
         return (bool)$result;
     }
 
+    public static function disable_website_url() {
+        $options = SB_Option::get();
+        $result = isset($options['comment']['website_url']) ? $options['comment']['website_url'] : 0;
+        return (bool)$result;
+    }
+
+    public static function enable_comment_tools() {
+        $options = SB_Option::get();
+        $result = isset($options['comment']['tools']) ? $options['comment']['tools'] : 1;
+        return (bool)$result;
+    }
+
     public static function enable_auto_empty_spam() {
         $options = SB_Option::get();
         $result = isset($options['comment']['auto_empty_spam']) ? $options['comment']['auto_empty_spam'] : 1;

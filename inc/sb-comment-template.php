@@ -2,6 +2,7 @@
 if(post_password_required()) {
     return;
 }
+$post_id = $GLOBALS['post']->ID;
 if(!function_exists('sb_comment_callback')) {
     function sb_comment_callback($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment;
@@ -38,28 +39,30 @@ if(!function_exists('sb_comment_callback')) {
         <?php endif; ?>
         <div class="comment-tools" data-comment="<?php echo $comment->comment_ID; ?>" data-url="<?php echo $comment_permalink; ?>">
             <?php comment_reply_link(array_merge($args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
-            <?php
-            $class = 'comment-like';
-            $session_comment_liked_key = 'comment_' . $comment->comment_ID . '_likes';
-            $liked = intval(SB_PHP::get_session($session_comment_liked_key));
-            if($liked == 1) {
-                $class = SB_PHP::add_string_with_space_before($class, 'disable');
-            }
-            ?>
-            <a class="<?php echo $class; ?>" href="javascript:;" data-session-liked-key="<?php echo $session_comment_liked_key; ?>"><span class="text"><?php _e('Thích', 'sb-comment'); ?></span><i class="fa fa-thumbs-o-up icon-right"></i> <span class="sep-dot">.</span> <span class="count"><?php echo SB_Comment::get_likes($comment->comment_ID); ?></span></a>
-            <a class="comment-report" href="javascript:;"><?php _e('Báo cáo vi phạm', 'sb-comment'); ?></a>
-            <a class="comment-share" href="javascript:;">
-                <span class="text">
-                    <?php _e('Chia sẻ', 'sb-comment'); ?>
-                </span>
-                <i class="fa fa-angle-down icon-right"></i>
-                <span class="list-share">
-                    <?php $url = SB_Core::get_social_share_url(array('social_name' => 'facebook', 'permalink' => $comment_permalink)); ?>
-                    <i class="fa fa-facebook facebook" data-url="<?php echo $url; ?>"></i>
-                    <i class="fa fa-google-plus google" data-url="<?php echo SB_Core::get_social_share_url(array('social_name' => 'googleplus', 'permalink' => $comment_permalink)); ?>"></i>
-                    <i class="fa fa-twitter twitter" data-url="<?php echo SB_Core::get_social_share_url(array('social_name' => 'twitter', 'permalink' => $comment_permalink)); ?>"></i>
-                </span>
-            </a>
+            <?php if(SB_Comment::enable_comment_tools()) : ?>
+                <?php
+                $class = 'comment-like';
+                $session_comment_liked_key = 'comment_' . $comment->comment_ID . '_likes';
+                $liked = intval(SB_PHP::get_session($session_comment_liked_key));
+                if($liked == 1) {
+                    $class = SB_PHP::add_string_with_space_before($class, 'disable');
+                }
+                ?>
+                <a class="<?php echo $class; ?>" href="javascript:;" data-session-liked-key="<?php echo $session_comment_liked_key; ?>"><span class="text"><?php _e('Thích', 'sb-comment'); ?></span><i class="fa fa-thumbs-o-up icon-right"></i> <span class="sep-dot">.</span> <span class="count"><?php echo SB_Comment::get_likes($comment->comment_ID); ?></span></a>
+                <a class="comment-report" href="javascript:;"><?php _e('Báo cáo vi phạm', 'sb-comment'); ?></a>
+                <a class="comment-share" href="javascript:;">
+                    <span class="text">
+                        <?php _e('Chia sẻ', 'sb-comment'); ?>
+                    </span>
+                        <i class="fa fa-angle-down icon-right"></i>
+                    <span class="list-share">
+                        <?php $url = SB_Core::get_social_share_url(array('social_name' => 'facebook', 'permalink' => $comment_permalink)); ?>
+                        <i class="fa fa-facebook facebook" data-url="<?php echo $url; ?>"></i>
+                        <i class="fa fa-google-plus google" data-url="<?php echo SB_Core::get_social_share_url(array('social_name' => 'googleplus', 'permalink' => $comment_permalink)); ?>"></i>
+                        <i class="fa fa-twitter twitter" data-url="<?php echo SB_Core::get_social_share_url(array('social_name' => 'twitter', 'permalink' => $comment_permalink)); ?>"></i>
+                    </span>
+                </a>
+            <?php endif; ?>
         </div>
         <?php if('div' != $args['style'] ) : ?>
             </div>
@@ -72,7 +75,7 @@ if(!function_exists('sb_comment_callback')) {
         <div class="comments-title">
             <span class="comment-count">
                 <?php
-                $int_count = get_comments_number();
+                $int_count = SB_Post::get_comment_number($post_id);
                 printf(_n('1 bình luận', '%1$s bình luận', $int_count, 'sb-comment' ), number_format_i18n($int_count));
                 ?>
             </span>
@@ -89,7 +92,8 @@ if(!function_exists('sb_comment_callback')) {
                 'callback' => 'sb_comment_callback',
                 'max_depth' => 3
             );
-            wp_list_comments($args);
+            $comments = SB_Post::get_comments(get_the_ID());
+            wp_list_comments($args, $comments);
             ?>
         </ol>
         <?php sb_comment_navigation('below'); ?>
