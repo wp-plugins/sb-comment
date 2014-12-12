@@ -27,6 +27,25 @@ class SB_Comment {
         return (bool)$result;
     }
 
+    public static function get_default_avatar_url() {
+        if(!self::use_default_avatar()) {
+            return '';
+        }
+        $options = SB_Option::get();
+        $value = isset($options['comment']['default_avatar_url']) ? $options['comment']['default_avatar_url'] : '';
+        return $value;
+    }
+
+    public static function use_default_avatar() {
+        global $sb_options;
+        if(empty($sb_options)) {
+            $sb_options = get_option('sb_options');
+        }
+        $options = $sb_options;
+        $result = isset($options['comment']['default_avatar']) ? $options['comment']['default_avatar'] : 0;
+        return (bool)$result;
+    }
+
     public static function enable_comment_tools() {
         $options = SB_Option::get();
         $result = isset($options['comment']['tools']) ? $options['comment']['tools'] : 1;

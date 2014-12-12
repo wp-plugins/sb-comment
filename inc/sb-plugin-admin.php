@@ -17,8 +17,42 @@ function sb_comment_setting_field() {
     SB_Admin_Custom::add_setting_field('sb_comment_auto_empty_spam', __('Auto empty spam', 'sb-comment'), 'sb_comment_section', 'sb_comment_auto_empty_spam_callback', 'sb_comment');
     SB_Admin_Custom::add_setting_field('sb_comment_remove_url', __('Disable website url', 'sb-comment'), 'sb_comment_section', 'sb_comment_remove_url_callback', 'sb_comment');
     SB_Admin_Custom::add_setting_field('sb_comment_tools', __('Comment tools', 'sb-comment'), 'sb_comment_section', 'sb_comment_tools_callback', 'sb_comment');
+    SB_Admin_Custom::add_setting_field('sb_comment_default_avatar', __('Default avatar', 'sb-comment'), 'sb_comment_section', 'sb_comment_default_avatar_callback', 'sb_comment');
+    if(SB_Comment::use_default_avatar()) {
+        SB_Admin_Custom::add_setting_field('sb_comment_default_avatar_url', __('Default avatar url', 'sb-comment'), 'sb_comment_section', 'sb_comment_default_avatar_url_callback', 'sb_comment');
+    }
 }
 add_action('sb_admin_init', 'sb_comment_setting_field');
+
+function sb_comment_default_avatar_url_callback() {
+    $options = SB_Option::get();
+    $value = isset($options['comment']['default_avatar_url']) ? $options['comment']['default_avatar_url'] : '';
+    $id = 'sb_comment_default_avatar_url';
+    $name = 'sb_options[comment][default_avatar_url]';
+    $description = __('You can turn on or turn off the functions to use default avatar on localhost.', 'sb-comment');
+    $args = array(
+        'id' => $id,
+        'name' => $name,
+        'value' => $value,
+        'description' => $description
+    );
+    SB_Field::media_image($args);
+}
+
+function sb_comment_default_avatar_callback() {
+    $options = SB_Option::get();
+    $value = isset($options['comment']['default_avatar']) ? $options['comment']['default_avatar'] : 0;
+    $id = 'sb_comment_default_avatar';
+    $name = 'sb_options[comment][default_avatar]';
+    $description = __('You can turn on or turn off the functions to use default avatar on localhost.', 'sb-comment');
+    $args = array(
+        'id' => $id,
+        'name' => $name,
+        'value' => $value,
+        'description' => $description
+    );
+    SB_Field::switch_button($args);
+}
 
 function sb_comment_remove_url_callback() {
     $options = SB_Option::get();

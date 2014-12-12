@@ -87,7 +87,7 @@ if(!function_exists('sb_comment_callback')) {
             $args = array(
                 'style' => 'ol',
                 'short_ping' => true,
-                'avatar_size' => 100,
+                'avatar_size' => 45,
                 'reply_text' => '<i class="fa fa-reply icon-left"></i><span class="text">' . __('Trả lời', 'sb-comment') . '</span>',
                 'callback' => 'sb_comment_callback',
                 'max_depth' => 3
