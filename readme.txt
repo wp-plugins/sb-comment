@@ -3,8 +3,8 @@ Contributors: skylarkcob
 Donate link: http://hocwp.net/donate/
 Tags: sb, sb team, sb plugin, comment, wordpress comment, sb comment
 Requires at least: 3.9
-Tested up to: 4.0.1
-Stable tag: 1.0.9
+Tested up to: 4.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -61,13 +61,19 @@ Please visit [homepage](http://hocwp.net) for more details.
 
 == Screenshots ==
 
-Please visit [homepage](http://hocwp.net) for more details.
+1. The default comment form.
+2. The default comment list.
 
 == Upgrade Notice ==
 
 Please update SB Core before you upgrade SB Comment to new version.
 
 == Changelog ==
+
+= 1.1.0 =
+* Tested up to WordPress 4.1 version.
+* Add style for small screen.
+* Add screenshots.
 
 = 1.0.9 =
 Add function for user set default avatar.
