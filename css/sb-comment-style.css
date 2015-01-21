@@ -18,6 +18,10 @@
     float: right;
 }
 
+.sb-comment-area .comment-list {
+    padding: 0;
+}
+
 .sb-comment-area .comment-author .avatar {
     border: 1px solid #c8c8c8;
     float: left;
