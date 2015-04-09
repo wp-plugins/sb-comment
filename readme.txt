@@ -3,8 +3,8 @@ Contributors: skylarkcob
 Donate link: http://hocwp.net/donate/
 Tags: sb, sb team, sb plugin, comment, wordpress comment, sb comment
 Requires at least: 3.9
-Tested up to: 4.1
-Stable tag: 1.1.1
+Tested up to: 4.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,9 @@ Please visit [homepage](http://hocwp.net) for more details.
 Please update SB Core before you upgrade SB Comment to new version.
 
 == Changelog ==
+
+= 1.1.2 =
+Stop using SB Plugins if current theme doesn't support.
 
 = 1.1.1 =
 * Update style for comment list.

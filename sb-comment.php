@@ -4,11 +4,15 @@ Plugin Name: SB Comment
 Plugin URI: http://hocwp.net/
 Description: SB Comment is a plugin that allows to check spam comment on your WordPress site, improve the default comment template on your blog.
 Author: SB Team
-Version: 1.1.1
+Version: 1.1.2
 Author URI: http://hocwp.net/
 Text Domain: sb-comment
 Domain Path: /languages/
 */
+
+if(defined('SB_THEME_VERSION') && version_compare(SB_THEME_VERSION, '1.7.0', '>=')) {
+    return;
+}
 
 define('SB_COMMENT_FILE', __FILE__);
 
